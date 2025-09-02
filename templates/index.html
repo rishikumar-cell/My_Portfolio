@@ -1,0 +1,478 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Hero</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="{% static 'assets/css/index.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/sections.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+</head>
+
+<body>
+<header>
+  <!-- Toggle Button (for mobile/tablet only) -->
+  <div class="toggle-btn" id="toggleBtn">
+    <i class="bi bi-list"></i>
+  </div>
+  <!-- Theme Toggle Button -->
+<button id="theme-toggle" class="theme-btn">
+  <i class="fas fa-moon" id="theme-icon"></i>
+</button>
+
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar" id="sidebar">
+    <a href="#home"><i class="bi bi-house-door-fill"></i><span> Home</span></a>
+    <a href="#about"><i class="bi bi-person-fill"></i><span> About</span></a>
+    <a href="#skills"><i class="bi bi-tools"></i><span> Skills</span></a>
+    <a href="#experience"><i class="bi bi-briefcase-fill"></i><span> Experience</span></a>
+    <a href="#projects"><i class="bi bi-grid-fill"></i><span> Projects</span></a>
+    <a href="#contact"><i class="bi bi-envelope-fill"></i><span> Contact</span></a>
+</div>
+
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 style="font-size:50px; color: burlywood;">Chittimalla Venu Kumar</h1>
+      <!-- Dark/Light Mode Toggle Button -->
+
+<p style="font-size: 30px; color: whitesmoke; font-family: serif;"> I'm a <span class="type_text" id="typed-text"></span></p>
+<style>
+  .type_text{
+   color: rgb(189, 244, 244);
+   font-size: 24px;
+   font-weight: 10px;
+   font-family: 'Courier New', Courier, monospace;
+  }
+  .social-icons{
+    color: whitesmoke;
+  }
+</style>
+
+
+     
+      <div class="social-icons">
+        <a href="https://github.com/rishikumar-cell"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/__rishi._.19/"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/chvenukumar/"><i class="bi bi-linkedin"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+   
+          </div>
+         <a href="{% static 'assets\files\Venu_Kumar_Chittimalla_Resume.pdf' %}" class="resume-btn" download>Download Resume</a>
+
+    </div>
+
+  </section>
+  
+</header>
+
+
+  <!---------------------------------------------------------------------------------->
+  
+    <!-- About Section -->
+<section id="about" class="about-section" style="height: 700px;">
+  <!-- Animated Overlay -->
+  <div class="animated-overlay">
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+    <div class="line line4"></div>
+  </div>
+
+  <div class="about-container">
+    <!-- Profile Image -->
+    
+
+
+    <!-- Content -->
+    <div class="about-content" data-aos="fade-left" data-aos-delay="400">
+      <h2 data-aos="fade-up" data-aos-delay="300">ABOUT ME</h2>
+      <p style="font-weight: bold;" data-aos="fade-up" data-aos-delay="500">
+        Hi, I’m <strong>Chittimalla Venu Kumar</strong>, a passionate 
+        <strong>A Software Developer / ML Enthusiast / Problem Solver with a strong foundation in Python, Django, SQL, React, and Data Structures & Algorithms. I enjoy building projects that combine clean design, scalability, and real-world problem-solving.
+        <br><br>
+        I’m curious by nature and love exploring new technologies in AI, Machine Learning, and Web Development. With every project, I strive to write efficient, maintainable code and create solutions that make an impact.
+      </p>
+      <p style="font-weight:bolder; font-family: 'Courier New', Courier, monospace;" data-aos="fade-up" data-aos-delay="500">When I’m not coding, you’ll find me learning new concepts, experimenting with open-source projects, or guiding others through tech challenges.</p>
+    </div>
+  </div>
+</section>
+
+  <!---------------------------------------------------------------------------------->
+
+
+<!-- Skills Section -->
+<section class="skills-section" id="skills">
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="300">My Arsenal</h2>
+
+    <!-- Animated Overlay -->
+  <div class="animated-overlay">
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+    <div class="line line4"></div>
+  </div>
+
+
+    <!-- Frontend Skills -->
+    <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+        <h3>Front-end</h3>
+        <div class="skills-grid">
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                <img src="{% static 'assets/images/icons/html.png' %}" alt="HTML">
+                <p>HTML</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                <img src="{% static 'assets/images/icons/css.png' %}" alt="CSS">
+                <p>CSS</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                <img src="{% static 'assets/images/icons/reactjs.png' %}" alt="React">
+                <p>React</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                <img src="{% static 'assets/images/icons/bootstrap.png' %}" alt="Bootstrap">
+                <p>Bootstrap</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+                <img src="{% static 'assets/images/icons/tailwind.png' %}" alt="Tailwind CSS">
+                <p>Tailwind CSS</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backend Skills -->
+    <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+        <h3>Back-end</h3>
+        <div class="skills-grid">
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                <img src="{% static 'assets/images/icons/django.png' %}" alt="Django">
+                <p>Django</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                <img src="{% static 'assets/images/icons/nodejs.png' %}" alt="Node.js">
+                <p>Node</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                <img src="{% static 'assets/images/icons/python.png' %}" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                <img src="{% static 'assets/images/icons/postgresql.png' %}" alt="PostgreSQL">
+                <p>PostgreSQL</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+                <img src="{% static 'assets/images/icons/sql.png' %}" alt="MongoDB">
+                <p>SQL</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other Skills -->
+    <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
+        <h3>Other</h3>
+        <div class="skills-grid">
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                <img src="{% static 'assets/images/icons/git.png' %}" alt="Git">
+                <p>Git</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                <img src="{% static 'assets/images/icons/vercel.png' %}" alt="Vercel">
+                <p>Vercel</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                <img src="{% static 'assets/images/icons/postman.png' %}" alt="Postman">
+                <p>Postman</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                <img src="{% static 'assets/images/icons/railway.png' %}" alt="Postman">
+                <p>Railway</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+  <!---------------------------------------------------------------------------------->
+
+ <section id="experience" class="experience-section">
+
+  <div class="exp-title" data-aos="zoom-in">
+    <h2>Professional Experience</h2>
+
+    <p data-aos="fade-up" data-aos-delay="200">
+      A creative journey of my professional growth 🌟
+    </p>
+  </div>
+  
+        <!-- Animated Overlay -->
+  <div class="animated-overlay">
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+    <div class="line line4"></div>
+  </div>
+
+  <!-- Background Graphics -->
+  <div class="bg-graphics">
+    <span class="circle c1"></span>
+    <span class="circle c2"></span>
+    <span class="circle c3"></span>
+    <span class="circle c4"></span>
+  </div>
+
+  <div class="experience-cards">
+    <!-- Card 1 -->
+    <div class="exp-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="exp-icon"><i class="fas fa-laptop-code"></i></div>
+      <div class="exp-content">
+        <h3>Software Developer Intern | <span>Bluestock Fintech</span></h3>
+        <span class="exp-date">May 2025 - June 2025</span>
+        <p>
+          Contributed to the development of fintech web applications, focusing on backend (Django, REST APIs) and frontend (React, JavaScript, Tailwind) features.
+        </p>
+        <p>
+          Worked with financial data models and optimized SQL queries for faster transaction insights.
+        </p>
+        <p>
+          Gained exposure to fintech workflows, stock market data integration, and data visualization tools.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="exp-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="exp-icon"><i class="fas fa-laptop-code"></i></div>
+      <div class="exp-content">
+        <h3>Software Developer Intern | <span>Ceeras IT Services PVT LTD</span></h3>
+        <span class="exp-date">Feb 2025 - June 2025</span>
+        <p>
+         Assisted in developing and maintaining enterprise web applications using Django, React, and REST APIs.</p>
+        <p>
+Designed and optimized database schemas and SQL queries to support high-performance applications.        </p>
+        <p>
+Collaborated with senior developers in code reviews, debugging, and deployment processes.        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="exp-card" data-aos="fade-up" data-aos-delay="400">
+      <div class="exp-icon"><i class="bi bi-code-slash"></i>
+</div>
+      <div class="exp-content">
+        <h3>Smart India Hackathon | Participant</h3>
+        <span class="exp-date">Sep 2024</span>
+        <p>
+         Selected as the only junior team from the entire college to participate in the internal hackathon.    </p>
+         <p>Recognized for problem-solving skills, innovative ideas, and technical potential among peers.</p>
+         <p>Collaborated with teammates to brainstorm real-world solutions, gaining exposure to competitive and collaborative coding environments.</p>
+        <p>Built confidence in teamwork, idea pitching, and rapid prototyping under time constraints.</p>
+        </div>
+    </div>
+
+
+    <div class="exp-card" data-aos="fade-up" data-aos-delay="400">
+      <div class="exp-icon"><i class="bi bi-code-slash"></i></div>
+      <div class="exp-content">
+        <h3>SUS Hacks Hackathon | Vignan Institute Vizag</h3>
+        <span class="exp-date">Dec 2024</span>
+        <p>Competed in a 200-team hackathon and secured a spot in the Top 10 teams.</p>        
+         <p>Collaborated with teammates to ideate and pitch an innovative solution in the Agritech.</p>
+        <p>Gained hands-on experience in teamwork, brainstorming, and rapid prototyping.</p>
+        </div>
+    </div>
+
+ </div>
+ </section>
+  <!---------------------------------------------------------------------------------->
+  
+  <!-- Projects Section -->
+<section id="projects" class="projects-section">
+  <!-- Background animated diagonal lines -->
+  <div class="projects-bg-lines">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Section Title -->
+  <div class="title" data-aos="fade-down" data-aos-delay="100">
+    <h2>What I’ve Built</h2>
+    <p>A selection of my featured projects built with modern technologies ⚡</p>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="projects-grid">
+    <div class="project-card" data-aos="slide-left">
+      <img src="{% static 'assets/images/whereTopurchase.png' %}" alt="Project 1" class="project-img">
+      <div class="project-content">
+        <h3>Where2Purchase Web App</h3>
+        <p>Where2Purchase is a smart product price comparison and availability platform that helps users find the best place to buy products across multiple vendors. The goal was to simplify decision-making for buyers by providing real-time product listings, price comparisons, and store availability in one place.</p>   
+        <a href="#">🔗 View Project</a>
+        <a href="#">| Github Repo</a>
+      </div>
+    </div>
+
+    <div class="project-card" data-aos="slide-up">
+      <img src="{% static 'assets/images/routefinder.png' %}" alt="Project 2" class="project-img">
+      <div class="project-content">
+        <h3>RouteFinder</h3>
+        <p>Route Finder is a web-based navigation tool built with the Google Maps API that allows users to find the shortest and most efficient routes between two locations. It was designed to make travel planning easier by providing real-time directions, distance, and travel time.</p>
+        <a href="#">🔗 View Project</a>
+        <a href="#">| Github Repo</a>
+      </div>
+    </div>
+
+    <div class="project-card" data-aos="slide-right">
+      <img src="{% static 'assets\images\sayy.png' %}" alt="Project 3" class="project-img">
+      <div class="project-content">
+        <h3>Sayy App</h3>
+        <p>Sayy is a real-time communication app that allows users to chat, share, and connect instantly. It was designed with simplicity and security in mind, making conversations smooth and reliable.</p>
+        <a href="#">🔗 View Project</a>
+        <a href="#">| Github Repo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!---------------------------------------------------------------------------------->
+  <!-- Contact Section -->
+<section id="contact" class="contact-section">
+
+  <!-- Animated Background Lines - Bottom -->
+  <div class="contact-bg-lines bottom-lines">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Floating Circles -->
+  <div class="contact-floating-circle circle1"></div>
+  <div class="contact-floating-circle circle2"></div>
+  <div class="contact-floating-circle circle3"></div>
+
+  <div class="con-title" data-aos="fade-up">
+    <h2>Get in Touch</h2>
+    <p data-aos="fade-right" data-aos-delay="200">
+      Interested in working together or just want to say hello? Feel free to reach out! 🚀
+    </p>
+  </div>
+
+  <div class="contact-grid">
+    <!-- Contact Info -->
+    <div class="contact-info" data-aos="fade-up" data-aos-delay="300">
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <h4>Email</h4>
+        <p>rishikumar54020@gmail.com</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone-alt"></i>
+        <h4>Phone</h4>
+        <p>+91 9392480464</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <h4>Location</h4>
+        <p>Vijayawada, India</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form method="POST" class="contact-form" data-aos="zoom-in" data-aos-delay="400">
+          {% csrf_token %}
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message ✉️</button>
+    </form>
+  
+
+  </div>
+</section>
+
+
+  <!---------------------------------------------------------------------------------->
+  <!---------------------------------------------------------------------------------->
+  
+
+
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>Chittimalla Venu Kumar</h3>
+      <p>I turn coffee into code (sometimes bugs too)</p>
+    </div>
+    <div class="footer-center">
+      <h4>Move To!</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Portfolio</a></li>
+        <li><a href="#experience">Resume</a></li>
+        <li><a href="#projects">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-right">
+      <h4>Let’s connect before Wi-Fi disconnects.</h4>
+      <div class="footer-social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/__rishi._.19/"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/chvenukumar/"><i class="bi bi-linkedin"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Chittimalla Venu Kumar.</p>
+  </div>
+</footer>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 1000,   // animation duration
+    once: false,      // allow repeat animation
+    mirror: true,     // animate on scroll up (reverse)
+    offset: 120       // trigger offset
+  });
+
+  AOS.init({
+    duration: 1000,
+    once: false, // animate every scroll
+    mirror: true // animate out when scrolling up
+  });
+</script>
+  <script src="{% static 'assets/js/index.js' %}"></script>
+<!-- Toast Notification -->
+<div id="toast" class="toast">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="toast-message {% if message.tags == 'success' %}success{% else %}error{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+</body>
+</html>
