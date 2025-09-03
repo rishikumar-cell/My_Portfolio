@@ -20,9 +20,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+ALLOWED_HOSTS = ['web-production-9e62.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-9e62.up.railway.app']
 
-ALLOWED_HOSTS = ['*']
 
 
 # Application definition
