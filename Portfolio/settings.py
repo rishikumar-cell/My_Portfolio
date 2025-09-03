@@ -19,9 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&t6qw$@5-=l^pt*y*78$^$qg1+7oy1hnb5l1(rmpi)@c(t5&ws'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -136,10 +133,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #tgtw okff lhal qxue
 # settings.py
 
+
+# settings.py
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'django-insecure-fallback-secret-key-for-local-testing'
+)
+
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'rishikumar54020@gmail.com'
-EMAIL_HOST_PASSWORD = 'tgtw okff lhal qxue'  # App password
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
