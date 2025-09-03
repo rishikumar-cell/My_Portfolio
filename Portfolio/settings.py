@@ -28,13 +28,15 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://web-production-9e62.up.railway.app"
 ]
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Application definition
+SECURE_SSL_REDIRECT = True
+
 
 # Secure cookies for production
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
-# Application definition
-SECURE_SSL_REDIRECT = True
-
 INSTALLED_APPS = [
     'Resume',
     'django.contrib.admin',
