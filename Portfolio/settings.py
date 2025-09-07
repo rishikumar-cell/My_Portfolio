@@ -19,10 +19,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&t6qw$@5-=l^pt*y*78$^$qg1+7oy1hnb5l1(rmpi)@c(t5&ws'
-
 # SECURITY WARNING: don't run with debug turned on in production!
+<<<<<<< HEAD
 DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
@@ -31,9 +29,25 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
 ]
 
+=======
+ALLOWED_HOSTS = [
+    "venukumar.up.railway.app",
+    "localhost",
+    "127.0.0.1"
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://venukumar.up.railway.app"
+]
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+>>>>>>> 032fb852dc5cd3764f04b48245e4b3126303f0d3
 
 # Application definition
+SECURE_SSL_REDIRECT = True
 
+
+# Secure cookies for production
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 INSTALLED_APPS = [
     'Resume',
     'django.contrib.admin',
@@ -64,7 +78,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR , 'templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,11 +95,9 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.dummy"
     }
 }
 
@@ -143,10 +155,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #tgtw okff lhal qxue
 # settings.py
 
+
+# settings.py
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY',
+    'django-insecure-fallback-secret-key-for-local-testing'
+)
+
+
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'rishikumar54020@gmail.com'
-EMAIL_HOST_PASSWORD = 'tgtw okff lhal qxue'  # App password
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
