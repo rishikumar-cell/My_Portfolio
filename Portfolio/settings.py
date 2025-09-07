@@ -81,11 +81,9 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.dummy"
     }
 }
 
@@ -146,12 +144,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # settings.py
 SECRET_KEY = os.environ.get(
-    'SECRET_KEY',
+    'DJANGO_SECRET_KEY',
     'django-insecure-fallback-secret-key-for-local-testing'
 )
 
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
 EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
