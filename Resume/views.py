@@ -1,28 +1,32 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.contrib import messages
-from django.core.mail import send_mail
 from threading import Thread
 import logging
+from django.core.mail import EmailMessage
 
+# Set up logger
 logger = logging.getLogger(__name__)
 
-# Async email sender function
-def send_email_async(subject, message, from_email, recipient_list):
+def send_email_async(subject, message, from_email, recipient_list, reply_to=None):
+    """
+    Sends email asynchronously using a thread.
+    Adds Reply-To header if provided.
+    """
     def send():
         try:
-            send_mail(
-                subject,
-                message,
-                from_email,
-                recipient_list,
-                fail_silently=False
+            email = EmailMessage(
+                subject=subject,
+                body=message,
+                from_email=from_email,
+                to=recipient_list,
+                headers={'Reply-To': reply_to} if reply_to else None
             )
+            email.send(fail_silently=False)
             logger.info("Email sent successfully via SendGrid")
         except Exception as e:
             logger.error(f"Email sending failed: {e}")
     Thread(target=send).start()
-
 
 def index(request):
     """
@@ -43,12 +47,13 @@ def index(request):
         subject = f"New Message From {name} <{email}>"
         full_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message_text}"
 
-        # Send email asynchronously
+        # Send email asynchronously with Reply-To
         send_email_async(
             subject,
             full_message,
             settings.DEFAULT_FROM_EMAIL,
-            [settings.DEFAULT_FROM_EMAIL]  # Receiving email
+            [settings.DEFAULT_FROM_EMAIL],  # Receiving email (your inbox)
+            reply_to=email                  # Replies go to sender
         )
 
         messages.success(request, "Your message has been sent successfully!")
