@@ -38,6 +38,12 @@
 
   <!-- Hero Section -->
   <section class="hero" id="home">
+     <video autoplay muted loop playsinline class="bg-video">
+    <source src="{% static 'assets/videos/bg_vid.mov' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Optional Overlay -->
     <div class="overlay"></div>
     <div class="hero-content">
       <h1 style="font-size:50px; color: burlywood;">Chittimalla Venu Kumar</h1>
@@ -392,8 +398,8 @@ Collaborated with senior developers in code reviews, debugging, and deployment p
     </div>
 
     <!-- Contact Form -->
-    <form method="POST" class="contact-form" data-aos="zoom-in" data-aos-delay="400">
-          {% csrf_token %}
+    <form action="{% url 'index' %}" method="post" class="contact-form" data-aos="zoom-in" data-aos-delay="400">
+    {% csrf_token %}
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>

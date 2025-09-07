@@ -23,9 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&t6qw$@5-=l^pt*y*78$^$qg1+7oy1hnb5l1(rmpi)@c(t5&ws'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
-ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+]
 
 
 # Application definition
@@ -50,6 +54,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+# ALLOWED_HOSTS = ['web-production-9e62.up.railway.app']
+# CSRF_TRUSTED_ORIGINS = ['https://web-production-9e62.up.railway.app']
+
 
 ROOT_URLCONF = 'Portfolio.urls'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
