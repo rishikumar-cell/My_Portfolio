@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-<<<<<<< HEAD
+
 DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
@@ -29,7 +29,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
 ]
 
-=======
+
 ALLOWED_HOSTS = [
     "venukumar.up.railway.app",
     "localhost",
@@ -39,7 +39,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://venukumar.up.railway.app"
 ]
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
->>>>>>> 032fb852dc5cd3764f04b48245e4b3126303f0d3
 
 # Application definition
 SECURE_SSL_REDIRECT = True
